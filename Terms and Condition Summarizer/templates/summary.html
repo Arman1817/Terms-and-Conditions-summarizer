@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Summary</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Text Summarization App</h1>
+    </header>
+    <main>
+        <h2>Summary</h2>
+        <ul>
+            {% for point in summary.split('\n') %}
+                {% if point.strip() != '' %}
+                    <li>{{ point }}</li>
+                {% endif %}
+            {% endfor %}
+        </ul>
+    </main>
+</body>
+</html>
